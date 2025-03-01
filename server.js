@@ -22,9 +22,6 @@ mongoose.connect(process.env.MONGO_URI, {
 
 console.log("MongoDB URI:", process.env.MONGO_URI);
 
-app.get('/', (req, res) => {
-    res.send('Hello, world!');
-  });
 
 // Define a Mongoose schema and model
 const contactSchema = new mongoose.Schema({
@@ -54,8 +51,6 @@ app.post("/api/contact", async (req, res) => {
     res.status(500).json({ message: "Failed to save data." });
   }
 });
-
-app.use(express.static('public')); // Serve files from the "public" folder
 
 // Start the server
 app.listen(PORT, () => {
