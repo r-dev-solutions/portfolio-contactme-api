@@ -34,7 +34,7 @@ const contactSchema = new mongoose.Schema({
 const Contact = mongoose.model("Contact", contactSchema);
 
 // API endpoint to handle form submission
-app.post("/api/contact", async (req, res) => {
+app.post("https://portfolio-contactme-api.onrender.com", async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
